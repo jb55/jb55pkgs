@@ -17,4 +17,4 @@
 
 ## Installing packages
 
-  $ nix-env -f jb55pkgs -i mandown
+    $ nix-env -f jb55pkgs -i mandown
