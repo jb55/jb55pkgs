@@ -5,4 +5,5 @@ in {
   # curlc = callPackage ./pkgs/curlc { };
   sharefile = callPackage ./pkgs/sharefile { };
   mandown = callPackage ./pkgs/mandown { };
+  csv-delim = callPackage ./pkgs/csv-delim { };
 }
