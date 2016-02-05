@@ -2,12 +2,14 @@
 , perlPackages
 , makeWrapper
 , perl
+, rsync
+, openssh
 , fetchFromGitHub
 }:
 stdenv.mkDerivation rec {
   name = "sharefile-${version}";
   version = "1.0.0";
-  buildInputs = [ perl perlPackages.URI makeWrapper ];
+  buildInputs = [ perl perlPackages.URI makeWrapper rsync openssh ];
 
   src = fetchFromGitHub {
     rev = "02a6126a541a401273b14d95df57b2f57125e4b6";
