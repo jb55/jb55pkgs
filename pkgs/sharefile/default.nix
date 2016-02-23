@@ -3,19 +3,23 @@
 , makeWrapper
 , perl
 , rsync
+, coreutils
 , openssh
 , fetchFromGitHub
 }:
-stdenv.mkDerivation rec {
+let
+  inputs = [ perl perlPackages.URI rsync openssh coreutils ];
+  buildPaths = sep: fmt: "${stdenv.lib.concatStringsSep sep (map fmt inputs)}";
+in stdenv.mkDerivation rec {
   name = "sharefile-${version}";
-  version = "1.0.0";
-  buildInputs = [ perl perlPackages.URI makeWrapper rsync openssh ];
+  version = "1.2";
+  buildInputs = [ makeWrapper ] ++ inputs;
 
   src = fetchFromGitHub {
-    rev = "02a6126a541a401273b14d95df57b2f57125e4b6";
+    rev = version;
     owner = "jb55";
     repo = "sharefile";
-    sha256 = "108582jb6yam1dsgg3rp1gjsj9sr8xlczwqskk6kdifb8v2183rr";
+    sha256 = "0cvw2hakxsjmpn5frfxp38jpc94knq0lfrzqhpv1xah6l83cb4vy";
   };
 
   installPhase = ''
@@ -23,12 +27,14 @@ stdenv.mkDerivation rec {
 
     cp sharefile $out/bin
     cp share_last_ss $out/bin
+    cp hashname $out/bin
+    cp hashshare $out/bin
 
     for prog in $(echo "$out/bin/"*)
     do
       wrapProgram "$prog" \
         --prefix PERL5LIB : "$PERL5LIB" \
-        --prefix PATH : "$out/bin:{perl}/bin"
+        --prefix PATH : "${buildPaths ":" (f: "${f}/bin")}"
     done
   '';
 }

@@ -5,13 +5,13 @@ let inputs = [ sharefile scrot libnotify xclip ];
       "${stdenv.lib.concatStringsSep sep (map fmt inputs)}";
 in stdenv.mkDerivation rec {
   name = "snap-${version}";
-  version = "0.1";
+  version = "0.3";
 
   src = fetchFromGitHub {
+    rev = version;
     owner = "jb55";
     repo = "sharefile-snap";
-    rev = "bad85582cea2eebcf677ed5b533716b7f235385f";
-    sha256 = "05pjsbd1bjjvsjlq8xk87l8z3wbblr81161q5xl8bgl7v0rwn3x1";
+    sha256 = "1clckdgcl4lmb1nnmpmlwnx6s2w4xfrnda30v6w8i5lg8dp9slxv";
   };
 
   buildInputs = [ makeWrapper ] ++ inputs;
