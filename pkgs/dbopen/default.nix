@@ -4,14 +4,14 @@
 }:
 stdenv.mkDerivation rec {
   name = "dbopen-${version}";
-  version = "1.1";
+  version = "1.3";
   buildInputs = [ python ];
 
   src = fetchFromGitHub {
-    rev = "a2ccc78a54ad6a62677d01175ad0c94aea424664";
+    rev = version;
     owner = "jb55";
     repo = "dbopen";
-    sha256 = "1nh5xajfr0nix4mv7qpn8qrs2bs33h9i43yyh548dgbvmlcprch2";
+    sha256 = "0w613z08pzkw2216f2zniqrp1zcc8r9wis6f1bhd1xbzlh0q5mkj";
   };
 
   configurePhase = "mkdir -p $out/bin";
