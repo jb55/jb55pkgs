@@ -15,8 +15,8 @@ stdenv.mkDerivation rec {
     sha256 = "19fx38wbrp8h7ip5yw6kx20cqny1wik37ra6dxam3qyp46xsb1j9";
   };
 
-  fixupPhase = ''
-    for file in "$out/bin/"*; do
+  patchPhase = ''
+    for file in "bin/"*; do
       sed -i 's,csv-delim,${csv-delim}/bin/csv-delim,g' "$file"
     done;
   '';
