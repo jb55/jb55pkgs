@@ -4,7 +4,7 @@
 }:
 stdenv.mkDerivation rec {
   name = "csv-scripts-${version}";
-  version = "0.2.2";
+  version = "0.2.3";
 
   buildInputs = [ csv-delim ];
 
@@ -12,7 +12,7 @@ stdenv.mkDerivation rec {
     owner = "jb55";
     repo = "csv-scripts";
     rev = version;
-    sha256 = "08z1h2rx21pf5a5bz1kzd8cfpyyw3a3byl9239mrwgqy0dwgjccy";
+    sha256 = "0lw1x2cajam38d49p5cm8l35jqkhz034zimbh1wycly434cr16yg";
   };
 
   patchPhase = ''
