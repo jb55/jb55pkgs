@@ -3,6 +3,7 @@
 , cryptonite-conduit, directory, filepath, http-types, lens
 , postgresql-simple, process, scotty, stdenv, text, text-format
 , transformers, unagi-chan, unix, xmlgen, time, blaze-builder, fetchgit
+, youtube-dl, makeWrapper
 }:
 mkDerivation {
   pname = "hearpress";
@@ -20,6 +21,11 @@ mkDerivation {
     filepath http-types lens postgresql-simple process scotty text
     text-format transformers unagi-chan unix xmlgen time blaze-builder
   ];
+  executableToolDepends = [ makeWrapper ];
+  postInstall = ''
+     wrapProgram $out/bin/hearpressd \
+       --prefix PATH ":" "${youtube-dl}/bin"
+  '';
   homepage = "https://hearpress.com";
   description = "Auditize media";
   license = stdenv.lib.licenses.unfree;
