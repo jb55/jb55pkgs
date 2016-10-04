@@ -1,5 +1,6 @@
 { nixpkgs ? import <nixpkgs> {} }:
 let callPackage = nixpkgs.pkgs.callPackage;
+    callHsPackage = nixpkgs.pkgs.haskellPackages.callPackage;
 in rec {
   # curlc   = callPackage ./pkgs/curlc { };
   csv-delim   = callPackage ./pkgs/csv-delim { };
@@ -10,4 +11,5 @@ in rec {
   snap        = callPackage ./pkgs/snap { inherit sharefile; };
   sharefile   = callPackage ./pkgs/sharefile { };
   samp        = callPackage ./pkgs/samp { };
+  hearpress   = callHsPackage ./pkgs/hearpress { };
 }
