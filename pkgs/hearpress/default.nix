@@ -10,8 +10,8 @@ mkDerivation {
   version = "0.1.0.0";
   src = fetchgit {
     url = http://git.zero.jb55.com/hearpress;
-    rev = "5ff3c2693c8b54c317e3299948f05c2a47e7b756";
-    sha256 = "16v5v8j1fln6ig7dh4hk60y9qs7vg8q0w2vid39bklz0rhgrap2c";
+    rev = "a4d8ce4a01d4d1fba041cf4a0247b07b44e154fb";
+    sha256 = "0kni6y9wz9qbxlqxic0kj0jma8c1cqmm1jl82lqv1aspxn29q60y";
   };
   isLibrary = false;
   isExecutable = true;
