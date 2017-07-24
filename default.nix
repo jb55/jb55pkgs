@@ -1,8 +1,9 @@
 { nixpkgs ? import <nixpkgs> {} }:
 let callPackage = nixpkgs.pkgs.callPackage;
     callHsPackage = nixpkgs.pkgs.haskellPackages.callPackage;
+    callRemote = r: d: callPackage (callPackage r {}) d;
 in rec {
-  # curlc   = callPackage ./pkgs/curlc { };
+  curlc       = callRemote  ./pkgs/curlc {};
   csv-delim   = callPackage ./pkgs/csv-delim { };
   csv-scripts = callPackage ./pkgs/csv-scripts { inherit csv-delim; };
   dbopen      = callPackage ./pkgs/dbopen { };
