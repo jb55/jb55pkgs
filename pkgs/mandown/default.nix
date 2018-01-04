@@ -6,13 +6,13 @@
 }:
 stdenv.mkDerivation rec {
   name = "mandown-${version}";
-  version = "0.8.1";
+  version = "0.9.0";
 
   src = fetchFromGitHub {
-    rev = "d69c1c64ad3376eeaeab40b6810a2c1e16881566";
+    rev = "5a26782ad935e4316f1d99e185d385750c5bc5cb";
     owner = "jb55";
     repo = "mandown";
-    sha256 = "09jk9qqpgkxpv45a7chjavdr7m4l1l27y4xs3flhfgjwcimxmh3p";
+    sha256 = "0mb06gbbi3ah026sffh3jcjny7b6g4acx2bp4b4kdjp4kq0ihy66";
   };
 
   makeFlags = "PREFIX=$(out)";
