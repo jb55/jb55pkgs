@@ -1,17 +1,17 @@
-{ stdenv, sharefile, scrot, libnotify, xclip, makeWrapper, fetchFromGitHub }:
+{ stdenv, sharefile, maim, libnotify, xclip, makeWrapper, fetchFromGitHub }:
 
-let inputs = [ sharefile scrot libnotify xclip ];
+let inputs = [ sharefile maim libnotify xclip ];
     buildPaths = sep: fmt:
       "${stdenv.lib.concatStringsSep sep (map fmt inputs)}";
 in stdenv.mkDerivation rec {
   name = "snap-${version}";
-  version = "0.3";
+  version = "1.1";
 
   src = fetchFromGitHub {
     rev = version;
     owner = "jb55";
     repo = "sharefile-snap";
-    sha256 = "1clckdgcl4lmb1nnmpmlwnx6s2w4xfrnda30v6w8i5lg8dp9slxv";
+    sha256 = "03kw2yrmy9hh86rz60mhmrz0xz4gwhbmmpq5fwa5bf3awpp733ad";
   };
 
   buildInputs = [ makeWrapper ] ++ inputs;
