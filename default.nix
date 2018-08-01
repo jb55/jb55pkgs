@@ -11,5 +11,6 @@ in rec {
   snap        = callPackage ./pkgs/snap { inherit sharefile; };
   sharefile   = callPackage ./pkgs/sharefile { };
   samp        = callPackage ./pkgs/samp { };
+  ratio       = callPackage ./pkgs/ratio { };
   hearpress   = callHsPackage ./pkgs/hearpress { };
 }
