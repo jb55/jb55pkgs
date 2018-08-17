@@ -1,11 +1,11 @@
-{ stdenv, sharefile, maim, libnotify, xclip, makeWrapper, fetchFromGitHub }:
+{ stdenv, coreutils, sharefile, maim, libnotify, xclip, makeWrapper, fetchFromGitHub }:
 
-let inputs = [ sharefile maim libnotify xclip ];
+let inputs = [ sharefile coreutils maim libnotify xclip ];
     buildPaths = sep: fmt:
       "${stdenv.lib.concatStringsSep sep (map fmt inputs)}";
 in stdenv.mkDerivation rec {
   name = "snap-${version}";
-  version = "1.1";
+  version = "1.2";
 
   src = fetchFromGitHub {
     rev = version;
