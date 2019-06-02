@@ -11,7 +11,7 @@ in stdenv.mkDerivation rec {
     rev = version;
     owner = "jb55";
     repo = "sharefile-snap";
-    sha256 = "03kw2yrmy9hh86rz60mhmrz0xz4gwhbmmpq5fwa5bf3awpp733ad";
+    sha256 = "0csz4zsgcx2agww1lcm82lzw2v8bmwaszbbc99ml5fmqcdqyi6qb";
   };
 
   buildInputs = [ makeWrapper ] ++ inputs;
