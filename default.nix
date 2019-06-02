@@ -1,9 +1,9 @@
 { nixpkgs ? import <nixpkgs> {} }:
 let callPackage = nixpkgs.pkgs.callPackage;
     callHsPackage = nixpkgs.pkgs.haskellPackages.callPackage;
-    fetchGitHub = rest: callPackage (nixpkgs.pkgs.fetchFromGitHub ({
+    fetchGitHub = rest: args: callPackage (nixpkgs.pkgs.fetchFromGitHub ({
       owner = "jb55";
-    } // rest)) {};
+    } // rest)) args;
 in rec {
   curlc       = callPackage ./pkgs/curlc {};
   csv-delim   = callPackage ./pkgs/csv-delim { };
@@ -20,7 +20,7 @@ in rec {
                   repo   = "bcalc";
                   rev    = "d4cc28f367ff6e43d51afc8b4be018aa7385cf86";
                   sha256 = "02ns6kfnp5g10m2ivhkspp1iws511bcxzw2455ny38hq14f8q1am";
-                };
+                } {};
 
   hearpress   = callHsPackage ./pkgs/hearpress { };
 }
