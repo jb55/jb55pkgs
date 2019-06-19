@@ -1,7 +1,7 @@
-{ nixpkgs ? import <nixpkgs> {} }:
-let callPackage = nixpkgs.pkgs.callPackage;
-    callHsPackage = nixpkgs.pkgs.haskellPackages.callPackage;
-    fetchGitHub = rest: args: callPackage (nixpkgs.pkgs.fetchFromGitHub ({
+{ pkgs }:
+let callPackage = pkgs.callPackage;
+    callHsPackage = pkgs.haskellPackages.callPackage;
+    fetchGitHub = rest: args: callPackage (pkgs.fetchFromGitHub ({
       owner = "jb55";
     } // rest)) args;
 in rec {
@@ -18,8 +18,8 @@ in rec {
 
   bcalc       = fetchGitHub {
                   repo   = "bcalc";
-                  rev    = "d4cc28f367ff6e43d51afc8b4be018aa7385cf86";
-                  sha256 = "02ns6kfnp5g10m2ivhkspp1iws511bcxzw2455ny38hq14f8q1am";
+                  rev    = "5a51083ec33883d3fec3c74cb0891b317f4d1f35";
+                  sha256 = "1mdkpd8rc5y4a4j0mwv7mkfd58a43mpxkxhrjlkkmcf2nngvqi0j";
                 } {};
 
   hearpress   = callHsPackage ./pkgs/hearpress { };
