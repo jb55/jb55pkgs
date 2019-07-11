@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs ? (import <nixpkgs> {}).pkgs }:
 let callPackage = pkgs.callPackage;
     callHsPackage = pkgs.haskellPackages.callPackage;
     fetchGitHub = rest: args: callPackage (pkgs.fetchFromGitHub ({
