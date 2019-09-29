@@ -32,6 +32,4 @@ in rec {
     rev    = "5a51083ec33883d3fec3c74cb0891b317f4d1f35";
     sha256 = "1mdkpd8rc5y4a4j0mwv7mkfd58a43mpxkxhrjlkkmcf2nngvqi0j";
   } {};
-
-  hearpress   = callHsPackage ./pkgs/hearpress { };
 }
