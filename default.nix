@@ -15,6 +15,12 @@ in rec {
   samp        = callPackage ./pkgs/samp { };
   ratio       = callPackage ./pkgs/ratio { };
 
+  zoom-link-opener = fetch {
+    repo = "zoom-link-opener";
+    rev  = "0.1.1";
+    sha256 = "013q814i7wcbl2ba5jpqkz00kpa1jaly53np30i4x01cfdfzywi3";
+  } {};
+
   viscal = fetch {
     repo = "viscal";
     rev  = "0.0.1";
