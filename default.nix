@@ -15,6 +15,12 @@ in rec {
   samp        = callPackage ./pkgs/samp { };
   ratio       = callPackage ./pkgs/ratio { };
 
+  viscal = fetch {
+    repo = "viscal";
+    rev  = "0.0.1";
+    sha256 = "0kisxf6m1xvll8xj54rl3lr07aq3l0gizix5axp9hkawss0b55sa";
+  } {};
+
   datefmt = fetch {
     repo = "datefmt";
     rev  = "0.1.1";
