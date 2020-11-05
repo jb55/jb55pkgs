@@ -15,6 +15,12 @@ in rec {
   samp        = callPackage ./pkgs/samp { };
   ratio       = callPackage ./pkgs/ratio { };
 
+  datefmt = fetch {
+    repo = "datefmt";
+    rev  = "0.1.1";
+    sha256 = "1xjfr1lbkiy277firlb8zkg1pmj7pmiijhxx1z4bg41970dr446x";
+  } {};
+
   btcs = fetch {
     repo = "btcs";
     rev  = "0.1";
