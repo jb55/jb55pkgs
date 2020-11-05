@@ -21,6 +21,12 @@ in rec {
     sha256 = "013q814i7wcbl2ba5jpqkz00kpa1jaly53np30i4x01cfdfzywi3";
   } {};
 
+  zebra = fetch {
+    repo = "zebra";
+    rev  = "0.1";
+    sha256 = "1l7rfjwnjc28zszbrzjqsgyp47hkl355is8zshfgv3wacb7n6424";
+  } {};
+
   viscal = fetch {
     repo = "viscal";
     rev  = "0.0.1";
